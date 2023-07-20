@@ -6,4 +6,5 @@ test.beforeEach(async ({ page }) => {
 
 test("initial", async ({ page }) => {
     expect(await page.innerText("h1")).toBe("Introduction to Mathematical Models of the Epidemiology & Control of Infectious Diseases - 2023");
+    await page.screenshot({ path: "screenshot.png" });
 });
