@@ -8,8 +8,8 @@ jobs:
   screenshots:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 16.x
       - name: Run WODIN
@@ -21,5 +21,5 @@ jobs:
           npx playwright test
       - uses: actions/upload-artifact@v3
         with:
-          name: test-artifact
+          name: screenshots
           path: screenshot/screenshots/

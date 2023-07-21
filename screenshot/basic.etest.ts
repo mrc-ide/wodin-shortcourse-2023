@@ -8,6 +8,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("Code and Run tabs", async ({ page }) => {
+    await expect(page.locator("reset-btn")).toBeEnabled(); // wait for code tab to fully load
     await takeScreenshot(page, folder, "CodeRun");
 });
 
