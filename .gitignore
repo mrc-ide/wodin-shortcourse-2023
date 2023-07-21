@@ -5,4 +5,5 @@ screenshot/node_modules
 screenshot/package.json
 screenshot/package-lock.json
 screenshot/screenshots
+screenshot/test-results
 tmpConfig
