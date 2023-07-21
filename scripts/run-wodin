@@ -22,7 +22,3 @@ docker run -d --name redis --network=wodin-nw redis:6
 WODIN_TAG=mrcide/wodin:$WODIN_BRANCH
 docker pull $WODIN_TAG
 docker run -d --name wodin -p 3000:3000 --network=wodin-nw -v $TMP_CONFIG:/config:ro $WODIN_TAG /config
-
-# check the app is there - TODO: remove this when tests are implemented
-#sleep 5
-#curl --head --fail  http://localhost:3000
