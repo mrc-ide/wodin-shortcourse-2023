@@ -8,11 +8,16 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("Code and Run tabs", async ({ page }) => {
-    await expect(page.locator("reset-btn")).toBeEnabled(); // wait for code tab to fully load
+    await expect(page.locator("#reset-btn")).toBeEnabled(); // wait for code tab to fully load
     await takeScreenshot(page, folder, "CodeRun");
 });
 
 test("Options and Run tabs", async ({ page }) => {
     await page.click(":nth-match(.wodin-left .nav-link, 2)");
     await takeScreenshot(page, folder, "OptionsRun");
+});
+
+test("Options and Sensitivity tabs", async ({ page }) => {
+    await page.click(":nth-match(.wodin-left .nav-link, 2)");
+    await takeScreenshot(page, folder, "OptionsSensitivity");
 });
