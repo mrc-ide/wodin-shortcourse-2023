@@ -4,10 +4,14 @@ import {takeScreenshot} from "./utils";
 const folder = "basic";
 
 test.beforeEach(async ({ page }) => {
-    await page.goto("/");
+    await page.goto("/apps/vaccination");
 });
 
-test("initial", async ({ page }) => {
-    expect(await page.innerText("h1")).toBe("Introduction to Mathematical Models of the Epidemiology & Control of Infectious Diseases - 2023");
-    await takeScreenshot(page, folder, "test");
+test("Code and Run tabs", async ({ page }) => {
+    await takeScreenshot(page, folder, "CodeRun");
+});
+
+test("Options and Run tabs", async ({ page }) => {
+    await page.click(":nth-match(.wodin-left .nav-link, 2)");
+    await takeScreenshot(page, folder, "OptionsRun");
 });
