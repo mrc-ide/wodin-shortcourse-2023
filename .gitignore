@@ -1,7 +1,8 @@
 .idea
 files/flu/.DS_Store
 .DS_Store
+screenshot/node_modules
 screenshot/package.json
 screenshot/package-lock.json
-screenshot/node_modules
+screenshot/screenshots
 tmpConfig
