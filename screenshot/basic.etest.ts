@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import {takeScreenshot} from "./utils";
+import {takeScreenshot, waitForPlot} from "./utils";
 
 const folder = "basic";
 
@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("Code and Run tabs", async ({ page }) => {
-    await expect(page.locator(":nth-match(.plot .main-svg, 1)")).toBeVisible(); // wait for the plot to render
+    await waitForPlot(page);
     await takeScreenshot(page, folder, "CodeRun");
 });
 

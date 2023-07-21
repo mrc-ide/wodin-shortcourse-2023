@@ -14,7 +14,7 @@ const uploadData = async (page: Page) => {
 
 test("Data and Run tabs", async ({ page }) => {
     await uploadData(page);
-    // wait for Run tab to update
+    // wait for Run tab to update with Cases series
     await expect(page.locator(".wodin-plot-data-summary-series[name='Cases']")).toHaveCount(1);
     await takeScreenshot(page, folder,"DataRun");
 });
