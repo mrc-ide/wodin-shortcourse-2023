@@ -4,7 +4,7 @@ This model includes births and deaths at per-capita rates $r$ and $mu$ per week,
 
 $$ \frac{dN}{dt}=rN-\mu N $$
 
-The difference $(r-mu)$ is the net birth rate and the solution is either exponential growth or decline i.e.,
+The difference $(r-\mu)$ is the net birth rate and the solution is either exponential growth or decline i.e.,
 
 $$ N(t) =N(0) \exp((r-mu)t) $$
 
