@@ -6,7 +6,7 @@ $$ \frac{dN}{dt}=rN-\mu N $$
 
 The difference $(r-\mu)$ is the net birth rate and the solution is either exponential growth or decline i.e.,
 
-$$ N(t) =N(0) \exp((r-mu)t) $$
+$$ N(t) =N(0) \exp((r-\mu)t) $$
 
 If births exceed deaths ($r > mu$) the population grows. If deaths exceed births ($mu > r$) the population shrinks.
 
