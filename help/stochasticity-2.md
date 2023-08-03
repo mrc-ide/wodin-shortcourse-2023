@@ -2,7 +2,7 @@
 
 This model includes births and deaths at per-capita rates $r$ and $mu$ per week, respectively. The ODE for $N$ is made up of the difference between the mean birth rate and the mean death rate:
 
-$$ \frac{dN}{dt}=rN-muN $$
+$$ \frac{dN}{dt}=rN-\mu N $$
 
 The difference $(r-mu)$ is the net birth rate and the solution is either exponential growth or decline i.e.,
 
