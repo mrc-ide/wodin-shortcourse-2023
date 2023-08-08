@@ -1,3 +1,4 @@
 ssh vagrant@wodin-dev.dide.ic.ac.uk
+cd wodin-epimodels
 ./update_source infectiousdiseasemodels-2023
 ./deploy 
