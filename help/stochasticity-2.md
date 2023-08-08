@@ -16,4 +16,4 @@ $$ \mbox{Births or deaths in }dt, n \sim \mathrm{Binomial}(N,(r + \mu)dt) $$
 
 We then decide which were births and which deaths:
 
-$$ \mbox{Deaths in }dt \sim \mathrm{Binomial}(mu / (r + \mu),n) $$
+$$ \mbox{Deaths in }dt \sim \mathrm{Binomial}(\mu / (r + \mu),n) $$
