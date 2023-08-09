@@ -7,3 +7,6 @@ screenshot/package-lock.json
 screenshot/screenshots
 screenshot/test-results
 tmpConfig
+.Rproj.user
+*.Rproj
+.Rhistory
