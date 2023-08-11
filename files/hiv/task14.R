@@ -2,8 +2,8 @@
   
 deriv(S_h) <- g*B-lambda_h*S_h-mu*S_h
 deriv(S_l) <- (1-g)*B-lambda_l*S_l-mu*S_l 
-deriv(I_h) <- lambda_h*S_h-mu*I_h-nu*I_h
-deriv(I_l) <- lambda_l*S_l-mu*I_h-nu*I_l
+deriv(I_h) <- lambda_h*S_h-mu*I_h-sigma*I_h
+deriv(I_l) <- lambda_l*S_l-mu*I_h-sigma*I_l
 
 ##Initial conditions
 
@@ -37,7 +37,7 @@ rho_lh <- 1-rho_ll
 #rho_lh <- 1-rho_ll
 
 B <- alpha*N_tot 	#entry rate, exponentially growing population
-#B <- mu*N_tot+nu*I	#entry rate, constant population size - useful for model checking
+#B <- mu*N_tot+sigma*I	#entry rate, constant population size - useful for model checking
 
 ##Parameter values
 
@@ -46,7 +46,7 @@ c_h <-user(11)		#partner change rate - high activity class
 c_l <-user(2)		#partner change rate - low activity class
 kappa <- user(0.1)  	#per partner HIV transmission probability
 #epsilon <- user(0.3)	#extent of mixing between assortative (0) and random (1) 
-nu <- user(0.0833)            #mortality rate per person per year due to HIV/AIDS (1/mean duration in years)		
+sigma <- user(0.0833)            #mortality rate per person per year due to HIV/AIDS (1/mean duration in years)		
 mu <- user(0.008)      #crude mortality rate due to causes other than AIDS, scaled to rate per person
 alpha <-user(0.0332)    #birth rate scaled to per person
 
