@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+set -ex
+
+{
+    red=$(tput setaf 1)
+    green=$(tput setaf 2)
+    yellow=$(tput setaf 3)
+    bold=$(tput bold)
+    normal=$(tput sgr0)
+
+    color_echo() {
+        COLOR=$1
+        MSG=$2
+        if [ "$COLOR" = "yellow" ]
+        then
+            echo "${bold}${yellow}$MSG${normal}"
+        elif [ "$COLOR" = "red" ]
+        then
+            echo "${bold}${red}$MSG${normal}"
+        elif [ "$COLOR" = "green" ]
+        then
+            echo "${bold}${green}$MSG${normal}"
+        else
+            echo "${bold}Invalid color${normal}"
+        fi
+    } 2> /dev/null
+} 2> /dev/null
+
+
+{ color_echo yellow "Stopping docker containers"; } 2> /dev/null
+docker stop wodin redis odin.api > /dev/null || {
+    color_echo red "Error: could not stop docker containers, see above for log"
+    exit
+} 2> /dev/null
+{ color_echo green "Stopped docker containers"; } 2> /dev/null
+
+# odin api removes itself
+{ color_echo yellow "Removing docker containers"; } 2> /dev/null
+docker rm wodin redis > /dev/null || {
+    color_echo red "Error: could not remove docker containers, see above for log"
+    exit
+} 2> /dev/null
+{ color_echo green "Removed docker containers"; } 2> /dev/null
+
+{ color_echo yellow "Removing network"; } 2> /dev/null
+docker network rm wodin-nw > /dev/null || {
+    color_echo red "Error: could not remove docker network, see above for log"
+    exit
+} 2> /dev/null
+{ color_echo green "All done, enjoy the rest of your day!"; } 2> /dev/null
