@@ -37,7 +37,7 @@ initial(V_D) <- 0
 
 # quantities to output
 output(R_eff) <- R0 * (S + V_S) / N 
-output(infections) <- foi * (S + V_S)
+output(new_infections) <- foi * S + foi_V * V_S
 output(total_deaths) <- D + V_D
 output(check_popsize) <- N + D + V_D
 

@@ -20,7 +20,7 @@ initial(D) <- 0
 initial(V) <- vaccine_coverage * N_init
 
 # quantities to output
-output(infections) <- foi * S
+output(new_infections) <- foi * S
 output(R_eff) <- R0 * S / N 
 output(check_popsize) <- N + D
 
